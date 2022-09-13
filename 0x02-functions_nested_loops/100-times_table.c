@@ -1,51 +1,49 @@
 #include "main.h"
-#include <stdio.h>
 /**
-* print_times_table - function
-*
-* @n: parameter
-*
-* Return: end program
-*/
+ * print_times_table - print multiplication table up to n
+ * @n: integer argument
+ */
 void print_times_table(int n)
 {
-	int a, m, p;
-	int a, m, p;
+	int row;
+	int column;
+	int product;
 
-	if (n >= 0 && n <= 15)
+if (n >= 0 && n <= 15)
+{
+	for (row = 0; row <= n; row++)
 	{
-		for (m = 0; m <= n; m++)
+		for (column = 0; column <= n; column++)
 		{
-			for (a = 0; a <= n; a++)
+			product = (row * column);
+			if (column == 0)
+
+				_putchar('0' + product);
+			else
 			{
-				p = m * a;
-				if (c == 0 && p < 10)
+				_putchar(',');
+				_putchar(' ');
+				if (product <= 9)
 				{
-					printf(",   %d", p);
+					_putchar(' ');
+					_putchar(' ');
+					_putchar('0' + product);
 				}
-				else if (c == 0 && p < 100)
+				else if (product > 9 && product < 100)
 				{
-					printf(",  %d", p);
+					_putchar(' ');
+					_putchar('0' + (product / 10));
+					_putchar('0' + (product % 10));
 				}
-				else if (c == 0 && p < 1000)
+				else if (product >= 100)
 				{
-					printf(", %d", p);
+					_putchar('0' + (product / 100));
+					_putchar('0' + ((product / 10) % 10));
+					_putchar('0' + (product % 10));
 				}
-				else if (c == 0 && p >= 1000)
-				{
-					printf(",%d", p);
-				}
-				else
-				{
-					printf("%d", p);
-				}
-				c = 0;
 			}
-			putchar(10);
-			c = 1;
 		}
+			_putchar('\n');
 	}
-	else
-	{
-	}
+}
 }
