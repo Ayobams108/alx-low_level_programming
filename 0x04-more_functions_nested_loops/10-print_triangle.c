@@ -21,15 +21,15 @@ void print_triangle(int size)
 			{
 				if (col < t)
 					_putchar(32);
-      				else
+				else
 					_putchar(35);
 				col++;
-   			}
+			}
 			_putchar(10);
 			col = 0;
 			row++;
 		}
 	}
-	else                   
-     		_putchar(10);
+	else
+		_putchar(10);
 }
